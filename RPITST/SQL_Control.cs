@@ -4,27 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+using System.Data;
+using System.Runtime.InteropServices;
 
 namespace RPITST
 {
     class SQL_Control: SQL_Connection
     {
-        //Server Configuration
-        private  string datasource  = "GURUTECH";
-        private  string database = "loan";
-        private  string user_ID  = "sa";
-        private  string pwd  = "123";
-
-        private  string cs;
-
-
-        public Connect_SQLServer()
-        {
-            cs = "Data Source=" + datasource + ";Initial Catalog=" + database + "; User ID=" + user_ID + ";Password=" + pwd;
-        }
-        protected SqlConnection GetConnection()
-        {
-            return new SqlConnection(cs);
-        }
+        
     }
 }
