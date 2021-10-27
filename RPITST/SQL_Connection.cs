@@ -18,7 +18,7 @@ namespace RPITST
         private  string cs;
 
 
-        public Connect_SQLServer()
+        public SQL_Connection()
         {
             cs = "Data Source=" + datasource + ";Initial Catalog=" + database + "; User ID=" + user_ID + ";Password=" + pwd;
         }
