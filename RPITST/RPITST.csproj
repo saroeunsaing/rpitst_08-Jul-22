@@ -53,11 +53,47 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_Academic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Academic.Designer.cs">
+      <DependentUpon>Frm_Academic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Frm_Dashboard.Designer.cs">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Department.Designer.cs">
+      <DependentUpon>Frm_Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Level.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Level.Designer.cs">
+      <DependentUpon>Frm_Level.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Register.Designer.cs">
+      <DependentUpon>Frm_Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Shift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Shift.Designer.cs">
+      <DependentUpon>Frm_Shift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Specialty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Specialty.Designer.cs">
+      <DependentUpon>Frm_Specialty.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,8 +102,26 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Academic.resx">
+      <DependentUpon>Frm_Academic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Department.resx">
+      <DependentUpon>Frm_Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Level.resx">
+      <DependentUpon>Frm_Level.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Register.resx">
+      <DependentUpon>Frm_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Shift.resx">
+      <DependentUpon>Frm_Shift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Specialty.resx">
+      <DependentUpon>Frm_Specialty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
