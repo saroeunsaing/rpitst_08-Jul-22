@@ -15,7 +15,7 @@ namespace RPITST
         private  string user_ID  = "sa";
         private  string pwd  = "123";
 
-        private  string cs;
+        private  string cs;//
 
         //dsfdsf
         public SQL_Connection()
