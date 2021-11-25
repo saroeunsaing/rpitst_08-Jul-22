@@ -23,7 +23,7 @@ namespace RPITST
         #region EXECUTEQUERY   
 
 
-        // QUERY PARAMETERS
+        // QUERY PARAMETERSdfdsf
         public List<SqlParameter> Params = new List<SqlParameter>();
         public int RecordCount;
         public string Exception;
