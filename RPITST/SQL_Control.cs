@@ -148,5 +148,85 @@ namespace RPITST
                 cn.Close();
             }
         }
+        DataTable Pivot(DataTable dt, DataColumn pivotColumn, DataColumn pivotValue)
+        {
+            // find primary key columns 
+            //(i.e. everything but pivot column and pivot value)
+            DataTable temp = dt.Copy();
+            temp.Columns.Remove(pivotColumn.ColumnName);
+            temp.Columns.Remove(pivotValue.ColumnName);
+            string[] pkColumnNames = temp.Columns.Cast<DataColumn>()
+                .Select(c => c.ColumnName)
+                .ToArray();
+
+            // prep results table
+            DataTable result = temp.DefaultView.ToTable(true, pkColumnNames).Copy();
+            result.PrimaryKey = result.Columns.Cast<DataColumn>().ToArray();
+            dt.AsEnumerable()
+                .Select(r => r[pivotColumn.ColumnName].ToString())
+                .Distinct().ToList()
+                .ForEach(c => result.Columns.Add(c, pivotColumn.DataType));
+
+            // load it
+            foreach (DataRow row in dt.Rows)
+            {
+                // find row to update
+                DataRow aggRow = result.Rows.Find(
+                    pkColumnNames
+                        .Select(c => row[c])
+                        .ToArray());
+                // the aggregate used here is LATEST 
+                // adjust the next line if you want (SUM, MAX, etc...)
+                aggRow[row[pivotColumn.ColumnName].ToString()] = row[pivotValue.ColumnName];
+            }
+
+            return result;
+        }
+
+        public void BindGrid(DataGridView gvDetails, ComboBox cboX,ComboBox cboY,ComboBox cboZ)
+        {
+           
+            ////string query = @"DECLARE @DynamicPivotQuery AS NVARCHAR(MAX)
+            //            DECLARE @ColumnName AS NVARCHAR(MAX)
+            //            SELECT @ColumnName = ISNULL(@ColumnName + ',','')+ QUOTENAME(subject) FROM (SELECT DISTINCT subject FROM score) AS student
+            //            SET @DynamicPivotQuery = ';WITH CTE AS(SELECT subject,student,score FROM score)
+            //            SELECT student,'+@ColumnName+' FROM CTE
+            //            PIVOT (MAX(score) FOR [subject] IN('+@ColumnName+')) p
+            //            ORDER BY student DESC'
+            //                EXEC(@DynamicPivotQuery)";
+
+            using (SqlConnection con = GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "select * from score";
+                    cmd.CommandType = CommandType.Text;
+
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        //using (DataTable dt = new DataTable())
+                        //{
+                        //gvDetails.AutoGenerateColumns = true;
+                        //sda.Fill(dt);
+                        //gvDetails.DataSource = dt;
+                        //// gvDetails.DataBindings();
+
+
+                        //SqlCommand cmd = new SqlCommand("select * from tbl_data", con);
+                        //con.Open();
+                        //SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        con.Close();
+                        
+                        gvDetails.DataSource = dt;
+
+                        //}
+                    }
+                }
+            }
+        }
     }
 }

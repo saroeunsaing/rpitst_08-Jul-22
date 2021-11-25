@@ -12,9 +12,22 @@ namespace RPITST.Forms
 {
     public partial class Frm_Shift : Form
     {
+        DataTable dt = new DataTable();
+        SQL_Control sql = new SQL_Control();
         public Frm_Shift()
         {
             InitializeComponent();
+        }
+
+        private void Frm_Shift_Load(object sender, EventArgs e)
+        {
+          
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
