@@ -228,5 +228,14 @@ namespace RPITST
                 }
             }
         }
+    public void REPORT()
+        {
+            
+            using (cn = GetConnection())
+            {
+            
+            }
+        }
+
     }
 }
