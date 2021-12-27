@@ -20,17 +20,17 @@ namespace RPITST {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSet_Data")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet1 : global::System.Data.DataSet {
+    public partial class DataSet_Data : global::System.Data.DataSet {
         
-        private usersDataTable tableusers;
+        private scoreDataTable tablescore;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DataSet1() {
+        public DataSet_Data() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace RPITST {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSet_Data(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace RPITST {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["users"] != null)) {
-                    base.Tables.Add(new usersDataTable(ds.Tables["users"]));
+                if ((ds.Tables["score"] != null)) {
+                    base.Tables.Add(new scoreDataTable(ds.Tables["score"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace RPITST {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public usersDataTable users {
+        public scoreDataTable score {
             get {
-                return this.tableusers;
+                return this.tablescore;
             }
         }
         
@@ -127,7 +127,7 @@ namespace RPITST {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet1 cln = ((DataSet1)(base.Clone()));
+            DataSet_Data cln = ((DataSet_Data)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace RPITST {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["users"] != null)) {
-                    base.Tables.Add(new usersDataTable(ds.Tables["users"]));
+                if ((ds.Tables["score"] != null)) {
+                    base.Tables.Add(new scoreDataTable(ds.Tables["score"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace RPITST {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableusers = ((usersDataTable)(base.Tables["users"]));
+            this.tablescore = ((scoreDataTable)(base.Tables["score"]));
             if ((initTable == true)) {
-                if ((this.tableusers != null)) {
-                    this.tableusers.InitVars();
+                if ((this.tablescore != null)) {
+                    this.tablescore.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace RPITST {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet1";
+            this.DataSetName = "DataSet_Data";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet1.xsd";
+            this.Namespace = "http://tempuri.org/DataSet_Data.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableusers = new usersDataTable();
-            base.Tables.Add(this.tableusers);
+            this.tablescore = new scoreDataTable();
+            base.Tables.Add(this.tablescore);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeusers() {
+        private bool ShouldSerializescore() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace RPITST {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet1 ds = new DataSet1();
+            DataSet_Data ds = new DataSet_Data();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +270,35 @@ namespace RPITST {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void usersRowChangeEventHandler(object sender, usersRowChangeEvent e);
+        public delegate void scoreRowChangeEventHandler(object sender, scoreRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class usersDataTable : global::System.Data.TypedTableBase<usersRow> {
+        public partial class scoreDataTable : global::System.Data.TypedTableBase<scoreRow> {
             
-            private global::System.Data.DataColumn columnid;
+            private global::System.Data.DataColumn columnspecialty;
             
-            private global::System.Data.DataColumn columnusername;
+            private global::System.Data.DataColumn columnyear;
             
-            private global::System.Data.DataColumn columnpassword;
+            private global::System.Data.DataColumn columnsemester;
             
-            private global::System.Data.DataColumn columnrole;
+            private global::System.Data.DataColumn columnname;
+            
+            private global::System.Data.DataColumn columngender;
+            
+            private global::System.Data.DataColumn columndob;
+            
+            private global::System.Data.DataColumn columnsubject;
+            
+            private global::System.Data.DataColumn columnmark;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usersDataTable() {
-                this.TableName = "users";
+            public scoreDataTable() {
+                this.TableName = "score";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +306,7 @@ namespace RPITST {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal usersDataTable(global::System.Data.DataTable table) {
+            internal scoreDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,40 +323,72 @@ namespace RPITST {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected usersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected scoreDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
+            public global::System.Data.DataColumn specialtyColumn {
                 get {
-                    return this.columnid;
+                    return this.columnspecialty;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn usernameColumn {
+            public global::System.Data.DataColumn yearColumn {
                 get {
-                    return this.columnusername;
+                    return this.columnyear;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn passwordColumn {
+            public global::System.Data.DataColumn semesterColumn {
                 get {
-                    return this.columnpassword;
+                    return this.columnsemester;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn roleColumn {
+            public global::System.Data.DataColumn nameColumn {
                 get {
-                    return this.columnrole;
+                    return this.columnname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn genderColumn {
+                get {
+                    return this.columngender;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn dobColumn {
+                get {
+                    return this.columndob;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn subjectColumn {
+                get {
+                    return this.columnsubject;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn markColumn {
+                get {
+                    return this.columnmark;
                 }
             }
             
@@ -363,48 +403,52 @@ namespace RPITST {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usersRow this[int index] {
+            public scoreRow this[int index] {
                 get {
-                    return ((usersRow)(this.Rows[index]));
+                    return ((scoreRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event usersRowChangeEventHandler usersRowChanging;
+            public event scoreRowChangeEventHandler scoreRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event usersRowChangeEventHandler usersRowChanged;
+            public event scoreRowChangeEventHandler scoreRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event usersRowChangeEventHandler usersRowDeleting;
+            public event scoreRowChangeEventHandler scoreRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event usersRowChangeEventHandler usersRowDeleted;
+            public event scoreRowChangeEventHandler scoreRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddusersRow(usersRow row) {
+            public void AddscoreRow(scoreRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usersRow AddusersRow(string id, string username, string password, string role) {
-                usersRow rowusersRow = ((usersRow)(this.NewRow()));
+            public scoreRow AddscoreRow(string specialty, string year, string semester, string name, string gender, string dob, string subject, string mark) {
+                scoreRow rowscoreRow = ((scoreRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id,
-                        username,
-                        password,
-                        role};
-                rowusersRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowusersRow);
-                return rowusersRow;
+                        specialty,
+                        year,
+                        semester,
+                        name,
+                        gender,
+                        dob,
+                        subject,
+                        mark};
+                rowscoreRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowscoreRow);
+                return rowscoreRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                usersDataTable cln = ((usersDataTable)(base.Clone()));
+                scoreDataTable cln = ((scoreDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -412,59 +456,75 @@ namespace RPITST {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new usersDataTable();
+                return new scoreDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnid = base.Columns["id"];
-                this.columnusername = base.Columns["username"];
-                this.columnpassword = base.Columns["password"];
-                this.columnrole = base.Columns["role"];
+                this.columnspecialty = base.Columns["specialty"];
+                this.columnyear = base.Columns["year"];
+                this.columnsemester = base.Columns["semester"];
+                this.columnname = base.Columns["name"];
+                this.columngender = base.Columns["gender"];
+                this.columndob = base.Columns["dob"];
+                this.columnsubject = base.Columns["subject"];
+                this.columnmark = base.Columns["mark"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.columnusername = new global::System.Data.DataColumn("username", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusername);
-                this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpassword);
-                this.columnrole = new global::System.Data.DataColumn("role", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrole);
-                this.columnid.MaxLength = 20;
-                this.columnusername.MaxLength = 200;
-                this.columnpassword.MaxLength = 200;
-                this.columnrole.MaxLength = 20;
+                this.columnspecialty = new global::System.Data.DataColumn("specialty", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnspecialty);
+                this.columnyear = new global::System.Data.DataColumn("year", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnyear);
+                this.columnsemester = new global::System.Data.DataColumn("semester", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsemester);
+                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname);
+                this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngender);
+                this.columndob = new global::System.Data.DataColumn("dob", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndob);
+                this.columnsubject = new global::System.Data.DataColumn("subject", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsubject);
+                this.columnmark = new global::System.Data.DataColumn("mark", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmark);
+                this.columnspecialty.MaxLength = 100;
+                this.columnyear.MaxLength = 20;
+                this.columnsemester.MaxLength = 20;
+                this.columnname.MaxLength = 100;
+                this.columngender.MaxLength = 10;
+                this.columndob.MaxLength = 20;
+                this.columnsubject.MaxLength = 100;
+                this.columnmark.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usersRow NewusersRow() {
-                return ((usersRow)(this.NewRow()));
+            public scoreRow NewscoreRow() {
+                return ((scoreRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new usersRow(builder);
+                return new scoreRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(usersRow);
+                return typeof(scoreRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.usersRowChanged != null)) {
-                    this.usersRowChanged(this, new usersRowChangeEvent(((usersRow)(e.Row)), e.Action));
+                if ((this.scoreRowChanged != null)) {
+                    this.scoreRowChanged(this, new scoreRowChangeEvent(((scoreRow)(e.Row)), e.Action));
                 }
             }
             
@@ -472,8 +532,8 @@ namespace RPITST {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.usersRowChanging != null)) {
-                    this.usersRowChanging(this, new usersRowChangeEvent(((usersRow)(e.Row)), e.Action));
+                if ((this.scoreRowChanging != null)) {
+                    this.scoreRowChanging(this, new scoreRowChangeEvent(((scoreRow)(e.Row)), e.Action));
                 }
             }
             
@@ -481,8 +541,8 @@ namespace RPITST {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.usersRowDeleted != null)) {
-                    this.usersRowDeleted(this, new usersRowChangeEvent(((usersRow)(e.Row)), e.Action));
+                if ((this.scoreRowDeleted != null)) {
+                    this.scoreRowDeleted(this, new scoreRowChangeEvent(((scoreRow)(e.Row)), e.Action));
                 }
             }
             
@@ -490,14 +550,14 @@ namespace RPITST {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.usersRowDeleting != null)) {
-                    this.usersRowDeleting(this, new usersRowChangeEvent(((usersRow)(e.Row)), e.Action));
+                if ((this.scoreRowDeleting != null)) {
+                    this.scoreRowDeleting(this, new scoreRowChangeEvent(((scoreRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveusersRow(usersRow row) {
+            public void RemovescoreRow(scoreRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -506,7 +566,7 @@ namespace RPITST {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                DataSet_Data ds = new DataSet_Data();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -524,7 +584,7 @@ namespace RPITST {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "usersDataTable";
+                attribute2.FixedValue = "scoreDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -568,127 +628,239 @@ namespace RPITST {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class usersRow : global::System.Data.DataRow {
+        public partial class scoreRow : global::System.Data.DataRow {
             
-            private usersDataTable tableusers;
+            private scoreDataTable tablescore;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal usersRow(global::System.Data.DataRowBuilder rb) : 
+            internal scoreRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableusers = ((usersDataTable)(this.Table));
+                this.tablescore = ((scoreDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string id {
+            public string specialty {
                 get {
                     try {
-                        return ((string)(this[this.tableusers.idColumn]));
+                        return ((string)(this[this.tablescore.specialtyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id\' in table \'users\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'specialty\' in table \'score\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableusers.idColumn] = value;
+                    this[this.tablescore.specialtyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string username {
+            public string year {
                 get {
                     try {
-                        return ((string)(this[this.tableusers.usernameColumn]));
+                        return ((string)(this[this.tablescore.yearColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'username\' in table \'users\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'year\' in table \'score\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableusers.usernameColumn] = value;
+                    this[this.tablescore.yearColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string password {
+            public string semester {
                 get {
                     try {
-                        return ((string)(this[this.tableusers.passwordColumn]));
+                        return ((string)(this[this.tablescore.semesterColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'password\' in table \'users\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'semester\' in table \'score\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableusers.passwordColumn] = value;
+                    this[this.tablescore.semesterColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string role {
+            public string name {
                 get {
                     try {
-                        return ((string)(this[this.tableusers.roleColumn]));
+                        return ((string)(this[this.tablescore.nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'role\' in table \'users\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'name\' in table \'score\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableusers.roleColumn] = value;
+                    this[this.tablescore.nameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsidNull() {
-                return this.IsNull(this.tableusers.idColumn);
+            public string gender {
+                get {
+                    try {
+                        return ((string)(this[this.tablescore.genderColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'gender\' in table \'score\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablescore.genderColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetidNull() {
-                this[this.tableusers.idColumn] = global::System.Convert.DBNull;
+            public string dob {
+                get {
+                    try {
+                        return ((string)(this[this.tablescore.dobColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dob\' in table \'score\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablescore.dobColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsusernameNull() {
-                return this.IsNull(this.tableusers.usernameColumn);
+            public string subject {
+                get {
+                    try {
+                        return ((string)(this[this.tablescore.subjectColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'subject\' in table \'score\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablescore.subjectColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetusernameNull() {
-                this[this.tableusers.usernameColumn] = global::System.Convert.DBNull;
+            public string mark {
+                get {
+                    try {
+                        return ((string)(this[this.tablescore.markColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'mark\' in table \'score\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablescore.markColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IspasswordNull() {
-                return this.IsNull(this.tableusers.passwordColumn);
+            public bool IsspecialtyNull() {
+                return this.IsNull(this.tablescore.specialtyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetpasswordNull() {
-                this[this.tableusers.passwordColumn] = global::System.Convert.DBNull;
+            public void SetspecialtyNull() {
+                this[this.tablescore.specialtyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsroleNull() {
-                return this.IsNull(this.tableusers.roleColumn);
+            public bool IsyearNull() {
+                return this.IsNull(this.tablescore.yearColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetroleNull() {
-                this[this.tableusers.roleColumn] = global::System.Convert.DBNull;
+            public void SetyearNull() {
+                this[this.tablescore.yearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IssemesterNull() {
+                return this.IsNull(this.tablescore.semesterColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetsemesterNull() {
+                this[this.tablescore.semesterColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnameNull() {
+                return this.IsNull(this.tablescore.nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnameNull() {
+                this[this.tablescore.nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsgenderNull() {
+                return this.IsNull(this.tablescore.genderColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetgenderNull() {
+                this[this.tablescore.genderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdobNull() {
+                return this.IsNull(this.tablescore.dobColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdobNull() {
+                this[this.tablescore.dobColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IssubjectNull() {
+                return this.IsNull(this.tablescore.subjectColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetsubjectNull() {
+                this[this.tablescore.subjectColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsmarkNull() {
+                return this.IsNull(this.tablescore.markColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetmarkNull() {
+                this[this.tablescore.markColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -696,22 +868,22 @@ namespace RPITST {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class usersRowChangeEvent : global::System.EventArgs {
+        public class scoreRowChangeEvent : global::System.EventArgs {
             
-            private usersRow eventRow;
+            private scoreRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usersRowChangeEvent(usersRow row, global::System.Data.DataRowAction action) {
+            public scoreRowChangeEvent(scoreRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usersRow Row {
+            public scoreRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -727,7 +899,7 @@ namespace RPITST {
         }
     }
 }
-namespace RPITST.DataSet1TableAdapters {
+namespace RPITST.DataSet_DataTableAdapters {
     
     
     /// <summary>
@@ -739,7 +911,7 @@ namespace RPITST.DataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class usersTableAdapter : global::System.ComponentModel.Component {
+    public partial class scoreTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -753,7 +925,7 @@ namespace RPITST.DataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public usersTableAdapter() {
+        public scoreTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -850,21 +1022,30 @@ namespace RPITST.DataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "users";
-            tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("username", "username");
-            tableMapping.ColumnMappings.Add("password", "password");
-            tableMapping.ColumnMappings.Add("role", "role");
+            tableMapping.DataSetTable = "score";
+            tableMapping.ColumnMappings.Add("specialty", "specialty");
+            tableMapping.ColumnMappings.Add("year", "year");
+            tableMapping.ColumnMappings.Add("semester", "semester");
+            tableMapping.ColumnMappings.Add("name", "name");
+            tableMapping.ColumnMappings.Add("gender", "gender");
+            tableMapping.ColumnMappings.Add("dob", "dob");
+            tableMapping.ColumnMappings.Add("subject", "subject");
+            tableMapping.ColumnMappings.Add("mark", "mark");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [users] ([id], [username], [password], [role]) VALUES (@id, @username" +
-                ", @password, @role)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [score] ([specialty], [year], [semester], [name], [gender], [dob], [s" +
+                "ubject], [mark]) VALUES (@specialty, @year, @semester, @name, @gender, @dob, @su" +
+                "bject, @mark)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@role", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@specialty", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "specialty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@year", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@semester", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "semester", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dob", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dob", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@subject", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mark", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mark", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -880,7 +1061,7 @@ namespace RPITST.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        users.*\r\nFROM            users";
+            this._commandCollection[0].CommandText = "SELECT        score.*\r\nFROM            score";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -888,7 +1069,7 @@ namespace RPITST.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.usersDataTable dataTable) {
+        public virtual int Fill(DataSet_Data.scoreDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -901,9 +1082,9 @@ namespace RPITST.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.usersDataTable GetData() {
+        public virtual DataSet_Data.scoreDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.usersDataTable dataTable = new DataSet1.usersDataTable();
+            DataSet_Data.scoreDataTable dataTable = new DataSet_Data.scoreDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -911,15 +1092,15 @@ namespace RPITST.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.usersDataTable dataTable) {
+        public virtual int Update(DataSet_Data.scoreDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "users");
+        public virtual int Update(DataSet_Data dataSet) {
+            return this.Adapter.Update(dataSet, "score");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -941,30 +1122,54 @@ namespace RPITST.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string id, string username, string password, string role) {
-            if ((id == null)) {
+        public virtual int Insert(string specialty, string year, string semester, string name, string gender, string dob, string subject, string mark) {
+            if ((specialty == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(id));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(specialty));
             }
-            if ((username == null)) {
+            if ((year == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(username));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(year));
             }
-            if ((password == null)) {
+            if ((semester == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(password));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(semester));
             }
-            if ((role == null)) {
+            if ((name == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(role));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(name));
+            }
+            if ((gender == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(gender));
+            }
+            if ((dob == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(dob));
+            }
+            if ((subject == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(subject));
+            }
+            if ((mark == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(mark));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -995,7 +1200,7 @@ namespace RPITST.DataSet1TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private usersTableAdapter _usersTableAdapter;
+        private scoreTableAdapter _scoreTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1017,12 +1222,12 @@ namespace RPITST.DataSet1TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public usersTableAdapter usersTableAdapter {
+        public scoreTableAdapter scoreTableAdapter {
             get {
-                return this._usersTableAdapter;
+                return this._scoreTableAdapter;
             }
             set {
-                this._usersTableAdapter = value;
+                this._scoreTableAdapter = value;
             }
         }
         
@@ -1045,9 +1250,9 @@ namespace RPITST.DataSet1TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._usersTableAdapter != null) 
-                            && (this._usersTableAdapter.Connection != null))) {
-                    return this._usersTableAdapter.Connection;
+                if (((this._scoreTableAdapter != null) 
+                            && (this._scoreTableAdapter.Connection != null))) {
+                    return this._scoreTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1062,7 +1267,7 @@ namespace RPITST.DataSet1TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._usersTableAdapter != null)) {
+                if ((this._scoreTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1074,14 +1279,14 @@ namespace RPITST.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSet_Data dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._usersTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.users.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._scoreTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.score.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._usersTableAdapter.Update(updatedRows));
+                    result = (result + this._scoreTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1093,13 +1298,13 @@ namespace RPITST.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSet_Data dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._usersTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.users.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._scoreTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.score.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._usersTableAdapter.Update(addedRows));
+                    result = (result + this._scoreTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1111,13 +1316,13 @@ namespace RPITST.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSet_Data dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._usersTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._scoreTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.score.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._usersTableAdapter.Update(deletedRows));
+                    result = (result + this._scoreTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1153,15 +1358,15 @@ namespace RPITST.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DataSet1 dataSet) {
+        public virtual int UpdateAll(DataSet_Data dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._usersTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._usersTableAdapter.Connection) == false))) {
+            if (((this._scoreTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._scoreTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1197,13 +1402,13 @@ namespace RPITST.DataSet1TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._usersTableAdapter != null)) {
-                    revertConnections.Add(this._usersTableAdapter, this._usersTableAdapter.Connection);
-                    this._usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._usersTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._usersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._usersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._usersTableAdapter.Adapter);
+                if ((this._scoreTableAdapter != null)) {
+                    revertConnections.Add(this._scoreTableAdapter, this._scoreTableAdapter.Connection);
+                    this._scoreTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._scoreTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._scoreTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._scoreTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._scoreTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1264,9 +1469,9 @@ namespace RPITST.DataSet1TableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._usersTableAdapter != null)) {
-                    this._usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usersTableAdapter]));
-                    this._usersTableAdapter.Transaction = null;
+                if ((this._scoreTableAdapter != null)) {
+                    this._scoreTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._scoreTableAdapter]));
+                    this._scoreTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
