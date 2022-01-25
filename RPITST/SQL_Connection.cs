@@ -10,7 +10,7 @@ namespace RPITST
     public abstract class SQL_Connection
     {
         //Server Configuration
-        private  string datasource  = "GURUTECH";
+        private  string datasource  = "RPITST";
         private  string database = "rpitst";
         private  string user_ID  = "sa";
         private  string pwd  = "123";

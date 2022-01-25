@@ -31,7 +31,7 @@ namespace RPITST.Forms
         {
             this.panel_Title = new System.Windows.Forms.Panel();
             this.panel_Content = new System.Windows.Forms.Panel();
-            this.cmd_year = new System.Windows.Forms.ComboBox();
+            this.cmb_year = new System.Windows.Forms.ComboBox();
             this.cmb_level = new System.Windows.Forms.ComboBox();
             this.cmb_specialty = new System.Windows.Forms.ComboBox();
             this.cmb_Department = new System.Windows.Forms.ComboBox();
@@ -55,7 +55,7 @@ namespace RPITST.Forms
             // 
             // panel_Content
             // 
-            this.panel_Content.Controls.Add(this.cmd_year);
+            this.panel_Content.Controls.Add(this.cmb_year);
             this.panel_Content.Controls.Add(this.cmb_level);
             this.panel_Content.Controls.Add(this.cmb_specialty);
             this.panel_Content.Controls.Add(this.cmb_Department);
@@ -70,16 +70,16 @@ namespace RPITST.Forms
             this.panel_Content.Size = new System.Drawing.Size(900, 465);
             this.panel_Content.TabIndex = 1;
             // 
-            // cmd_year
+            // cmb_year
             // 
-            this.cmd_year.BackColor = System.Drawing.Color.Beige;
-            this.cmd_year.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmd_year.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmd_year.FormattingEnabled = true;
-            this.cmd_year.Location = new System.Drawing.Point(564, 340);
-            this.cmd_year.Name = "cmd_year";
-            this.cmd_year.Size = new System.Drawing.Size(276, 33);
-            this.cmd_year.TabIndex = 8;
+            this.cmb_year.BackColor = System.Drawing.Color.Beige;
+            this.cmb_year.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmb_year.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_year.FormattingEnabled = true;
+            this.cmb_year.Location = new System.Drawing.Point(564, 340);
+            this.cmb_year.Name = "cmb_year";
+            this.cmb_year.Size = new System.Drawing.Size(276, 33);
+            this.cmb_year.TabIndex = 8;
             // 
             // cmb_level
             // 
@@ -159,17 +159,21 @@ namespace RPITST.Forms
             // 
             // dgv_Data
             // 
+            this.dgv_Data.AllowUserToAddRows = false;
+            this.dgv_Data.AllowUserToDeleteRows = false;
             this.dgv_Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Data.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_Data.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_Data.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Data.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgv_Data.Location = new System.Drawing.Point(3, 6);
             this.dgv_Data.Name = "dgv_Data";
             this.dgv_Data.RowHeadersVisible = false;
             this.dgv_Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Data.Size = new System.Drawing.Size(512, 456);
             this.dgv_Data.TabIndex = 0;
+            this.dgv_Data.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgv_Data_CellValidating);
             // 
             // Frm_Score
             // 
@@ -196,7 +200,7 @@ namespace RPITST.Forms
 
         private System.Windows.Forms.Panel panel_Title;
         private System.Windows.Forms.Panel panel_Content;
-        private System.Windows.Forms.ComboBox cmd_year;
+        private System.Windows.Forms.ComboBox cmb_year;
         private System.Windows.Forms.ComboBox cmb_level;
         private System.Windows.Forms.ComboBox cmb_specialty;
         private System.Windows.Forms.ComboBox cmb_Department;

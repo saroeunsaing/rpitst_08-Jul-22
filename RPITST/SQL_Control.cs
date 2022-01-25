@@ -252,6 +252,74 @@ namespace RPITST
                 cbx.ValueMember = index;
             }
         }
+        DataTable m_dataTable;
+        DataTable table { get { return m_dataTable; } set { m_dataTable = value; } }
+
+        
+        private const string m_choiceCol = "Score";
+
+        class Options
+        {
+            public int m_Index { get; set; }
+            public string m_Text { get; set; }
+        }
+
+        public void retrive(string qty,DataGridView dgv)
+        {
+            using (var cn = GetConnection())
+            {
+                cmd = new SqlCommand(qty, cn);
+                da = new SqlDataAdapter(cmd);
+
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+
+                
+                if (!dgv.Columns.Contains(m_choiceCol))
+                {
+                    DataGridViewTextBoxColumn txtCol = new DataGridViewTextBoxColumn();
+                    txtCol.Name = m_choiceCol;
+                    dgv.Columns.Add(txtCol);
+                    dgv.Columns[1].ReadOnly = true;
+                    dgv.Columns[0].ReadOnly = true;
+                    dgv.Columns[2].ReadOnly = true;
+                    dgv.Columns[3].ReadOnly = true;
+                }
+
+                //List<Options> oList = new List<Options>();
+                //oList.Add(new Options() { m_Index = 0, m_Text = "None" });
+                //for (int i = 1; i < 10; i++)
+                //{
+                //    oList.Add(new Options() { m_Index = i, m_Text = "Op" + i });
+                //}
+
+                //for (int i = 0; i < dgv.Rows.Count - 1; i += 2)
+                //{
+                   // DataGridViewComboBoxCell c = new DataGridViewComboBoxCell();
+
+                //Setup A
+                //c.DataSource = oList;
+                //c.Value = oList[0].m_Text;
+                //c.ValueMember = "m_Text";
+                //c.DisplayMember = "m_Text";
+                //c.ValueType = typeof(string);
+
+                ////Setup B
+                //c.DataSource = oList;
+                //c.Value = 0;
+                //c.ValueMember = "m_Index";
+                //c.DisplayMember = "m_Text";
+                //c.ValueType = typeof(int);
+
+                //Result is the same A or B
+                //dgv[m_choiceCol, i] = c;
+                //}
+                //ref: https://stackoverflow.com/questions/1814423/datagridview-how-to-set-a-cell-in-editing-mode
+            }
+
+
+        }
     }
 
     
