@@ -30,7 +30,7 @@ namespace RPITST.Forms
             cnn.Open();
             sql = "SELECT * from users";
             SqlDataAdapter dscmd = new SqlDataAdapter(sql, cnn);
-            DataSet1 ds = new DataSet1();
+           DataSet_Data ds = new DataSet_Data();
             dscmd.Fill(ds, "Product");
             MessageBox.Show(ds.Tables[1].Rows.Count.ToString());
             cnn.Close();

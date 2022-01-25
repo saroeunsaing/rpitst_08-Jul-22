@@ -237,5 +237,22 @@ namespace RPITST
             }
         }
 
+       public void cmbx(string qty,ComboBox cbx,string index,string value)
+        {
+            using(var cn = GetConnection())
+            {
+               //  cn.Open();
+                da =new SqlDataAdapter(qty, cn);
+                dt = new DataTable();
+
+                da.Fill(dt);
+
+                cbx.DataSource = dt;
+                cbx.DisplayMember = value;
+                cbx.ValueMember = index;
+            }
+        }
     }
+
+    
 }
