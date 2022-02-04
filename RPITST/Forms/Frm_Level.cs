@@ -12,9 +12,17 @@ namespace RPITST.Forms
 {
     public partial class Frm_Level : Form
     {
+       
+
         public Frm_Level()
         {
             InitializeComponent();
+        }
+
+        
+        private void Frm_Level_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

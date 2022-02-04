@@ -16,5 +16,22 @@ namespace RPITST.Forms
         {
             InitializeComponent();
         }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Frm_Academic_Load(object sender, EventArgs e)
+        {
+            CueBannerText.SetCueText(txt_ID, "លេខសម្គាល់");
+            CueBannerText.SetCueText(txt_NameKH, "ឆ្នាំសិក្សា");
+            CueBannerText.SetCueText(txt_NameEN, "ជាឡាតាំង");
+        }
     }
 }

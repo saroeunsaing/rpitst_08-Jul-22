@@ -35,17 +35,26 @@
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net45\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +64,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CueBannerText.cs" />
@@ -75,6 +85,12 @@
     <Compile Include="Forms\Frm_Academic.Designer.cs">
       <DependentUpon>Frm_Academic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_Batch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Batch.Designer.cs">
+      <DependentUpon>Frm_Batch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +102,12 @@
     </Compile>
     <Compile Include="Forms\Frm_Department.Designer.cs">
       <DependentUpon>Frm_Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_RptERL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_RptERL.Designer.cs">
+      <DependentUpon>Frm_RptERL.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Level.cs">
       <SubType>Form</SubType>
@@ -117,6 +139,12 @@
     <Compile Include="Forms\Frm_Specialty.Designer.cs">
       <DependentUpon>Frm_Specialty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_Subject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Subject.Designer.cs">
+      <DependentUpon>Frm_Subject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Transcript.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +172,12 @@
       <DependentUpon>CR_Provisional_Certificate .rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\CR_ERL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_ERL.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\CR_Transcript.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -158,11 +192,17 @@
     <EmbeddedResource Include="Forms\Frm_Academic.resx">
       <DependentUpon>Frm_Academic.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Batch.resx">
+      <DependentUpon>Frm_Batch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Department.resx">
       <DependentUpon>Frm_Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_RptERL.resx">
+      <DependentUpon>Frm_RptERL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Level.resx">
       <DependentUpon>Frm_Level.cs</DependentUpon>
@@ -178,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Specialty.resx">
       <DependentUpon>Frm_Specialty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Subject.resx">
+      <DependentUpon>Frm_Subject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Transcript.resx">
       <DependentUpon>Frm_Transcript.cs</DependentUpon>
@@ -202,6 +245,10 @@
     <EmbeddedResource Include="Reports\CR_Provisional_Certificate .rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_Provisional_Certificate .cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CR_ERL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_ERL.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CR_Transcript.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

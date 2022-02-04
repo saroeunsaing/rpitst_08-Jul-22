@@ -31,6 +31,7 @@ namespace RPITST.Forms
         {
             this.panel_Title = new System.Windows.Forms.Panel();
             this.panel_Content = new System.Windows.Forms.Panel();
+            this.btn_Save = new FontAwesome.Sharp.IconButton();
             this.cmb_year = new System.Windows.Forms.ComboBox();
             this.cmb_level = new System.Windows.Forms.ComboBox();
             this.cmb_specialty = new System.Windows.Forms.ComboBox();
@@ -55,6 +56,7 @@ namespace RPITST.Forms
             // 
             // panel_Content
             // 
+            this.panel_Content.Controls.Add(this.btn_Save);
             this.panel_Content.Controls.Add(this.cmb_year);
             this.panel_Content.Controls.Add(this.cmb_level);
             this.panel_Content.Controls.Add(this.cmb_specialty);
@@ -69,6 +71,24 @@ namespace RPITST.Forms
             this.panel_Content.Name = "panel_Content";
             this.panel_Content.Size = new System.Drawing.Size(900, 465);
             this.panel_Content.TabIndex = 1;
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.FlatAppearance.BorderSize = 0;
+            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Save.ForeColor = System.Drawing.Color.Blue;
+            this.btn_Save.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btn_Save.IconColor = System.Drawing.Color.Blue;
+            this.btn_Save.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Save.IconSize = 40;
+            this.btn_Save.Location = new System.Drawing.Point(573, 410);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(103, 39);
+            this.btn_Save.TabIndex = 9;
+            this.btn_Save.Text = "រក្សាទុក";
+            this.btn_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // cmb_year
             // 
@@ -102,6 +122,7 @@ namespace RPITST.Forms
             this.cmb_specialty.Name = "cmb_specialty";
             this.cmb_specialty.Size = new System.Drawing.Size(276, 33);
             this.cmb_specialty.TabIndex = 6;
+            this.cmb_specialty.SelectedIndexChanged += new System.EventHandler(this.cmb_specialty_SelectedIndexChanged);
             // 
             // cmb_Department
             // 
@@ -209,5 +230,6 @@ namespace RPITST.Forms
         private System.Windows.Forms.ComboBox cmb_batch;
         private System.Windows.Forms.ComboBox cmb_academic;
         private System.Windows.Forms.DataGridView dgv_Data;
+        private FontAwesome.Sharp.IconButton btn_Save;
     }
 }

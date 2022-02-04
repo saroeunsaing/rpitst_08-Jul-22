@@ -16,7 +16,7 @@ namespace RPITST
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Frm_Score());
+            Application.Run(new Forms.Frm_Dashboard());
         }
     }
 }

@@ -7,6 +7,8 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
 using System.Runtime.InteropServices;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace RPITST
 {
@@ -19,16 +21,18 @@ namespace RPITST
         public DataTable dt;
         public DataSet ds;
 
-        
+        internal object LoadReport()
+        {
+            throw new NotImplementedException();
+        }
+
+
         #region EXECUTEQUERY   
-
-
         // QUERY PARAMETERSdfdsf
         public List<SqlParameter> Params = new List<SqlParameter>();
         public int RecordCount;
         public string Exception;
         public string ReturnQuery;
-
         public void ExecQuery(String Query , Boolean ReturnIdentity = false)
         {
             //RESET QUERY STATS
@@ -48,8 +52,7 @@ namespace RPITST
                     Params.Clear();
                     // EXECUTE COMMAND & FILL DATASET
                     dt = new DataTable();
-               
-
+  
                     da = new SqlDataAdapter(cmd);
                     RecordCount = da.Fill(dt);
 
@@ -64,7 +67,6 @@ namespace RPITST
                         da = new SqlDataAdapter(cmd);
                         RecordCount = da.Fill(dt);
                   }
-
                 }
                 catch (Exception ex)
                 {
@@ -97,8 +99,29 @@ namespace RPITST
             {
                 MessageBox.Show(Exception, "Exception:");
             }
-
             return true;
+        }
+
+        #endregion
+
+        #region Report
+        public DataSet LoadReport(string qty,string table)
+        {
+            using (var cn = GetConnection())
+            {
+                da = new SqlDataAdapter(qty, cn);
+                DataSet_Data ds = new DataSet_Data();
+                da.Fill(ds, table);
+                return ds;
+            }
+            //CALL CRYSTALL REPORT
+            //DataView dview = new DataView();
+            //dview.Table = sql.LoadReport("score").Tables["score"];
+
+            //Reports.CR_ERL myreport = new Reports.CR_ERL();
+            //myreport.SetDataSource(dview);
+            //crystalReportViewer1.ReportSource = myreport;
+            ////_ = crystalReportViewer1.DataBindings;
         }
 
         #endregion

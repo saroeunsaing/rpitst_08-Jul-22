@@ -24,6 +24,8 @@ namespace RPITST
             CharSet = CharSet.Ansi, SetLastError = true)]
 
         private static extern IntPtr FindWindowEx(IntPtr hWnd1, IntPtr hWnd2, string lpsz1, string lpsz2);
+
+
         private const int EM_SETCUEBANNER = 0x1501;
         /// <summary>
         /// Used to place shadow text into a TextBox or ComboBox when control does not have focus

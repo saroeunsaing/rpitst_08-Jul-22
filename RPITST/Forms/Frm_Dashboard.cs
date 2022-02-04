@@ -16,5 +16,12 @@ namespace RPITST.Forms
         {
             InitializeComponent();
         }
+
+        private void btn_Instagram_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

@@ -29,16 +29,16 @@ namespace RPITST.Forms
             CueBannerText.SetCueText(cmb_subject, "ជ្រើសរើសមុខវិជ្ជា");
             CueBannerText.SetCueText(cmb_semester, "ជ្រើសរើសឆមាស");
             CueBannerText.SetCueText(cmb_year, "ជ្រើសរើសឆមាស");
-            sql.cmbx("select id,nameen from academic",cmb_academic,"id","nameen");
-            sql.cmbx("select id,nameen from batch", cmb_academic, "id", "nameen");
-            sql.cmbx("select id,nameen from department", cmb_academic, "id", "nameen");
-            sql.cmbx("select id,nameen from level", cmb_academic, "id", "nameen");
-            sql.cmbx("select id,nameen from subject", cmb_academic, "id", "nameen");
-            sql.cmbx("select id,nameen from specialty", cmb_academic, "id", "nameen");
-            sql.cmbx("select id,nameen from semester", cmb_academic, "id", "nameen");
-            sql.cmbx("select id,nameen from year", cmb_academic, "id", "nameen");
-
-            sql.retrive("select namekh,nameen,genderen,doben from oregin", dgv_Data);
+            sql.cmbx("select id,namekh from academic", cmb_academic,"id", "namekh");
+            sql.cmbx("select id,namekh from batch", cmb_batch, "id", "namekh");
+            sql.cmbx("select id,namekh from department", cmb_Department, "id", "namekh");
+            sql.cmbx("select id,namekh from level", cmb_level, "id", "namekh");
+            sql.cmbx("select id,namekh from subject", cmb_subject, "id", "namekh");
+            sql.cmbx("select id,namekh from specialty", cmb_specialty, "id", "namekh");
+            sql.cmbx("select id,namekh from semester", cmb_semester, "id", "namekh");
+            sql.cmbx("select id,namekh from year", cmb_year, "id", "namekh");
+            sql.retrive("select namekh,nameen,gender,dob from DATA where specialty = N'"+ cmb_specialty.SelectedValue + "' And level =N'" + cmb_level.SelectedValue + "'  ", dgv_Data);
+            dgv_Data.Columns["score"].DefaultCellStyle.NullValue = "0.00";
         }
 
         private void dgv_Data_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -51,8 +51,51 @@ namespace RPITST.Forms
                     e.Cancel = true;
                     MessageBox.Show("must be numeric");
                     //ref: https://www.daniweb.com/programming/software-development/threads/226941/enter-only-number-in-datagridview
+                    //    }
+                    //}
                 }
+
+
+
+
+
             }
+
+            }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgv_Data.Rows)
+            {
+                // ADD SQL PARAMS & RUN THE COMMAND
+                sql.AddParam("@id", row.Cells["namekh"].Value);
+                sql.AddParam("@academic", cmb_academic.Text);
+                sql.AddParam("@year", cmb_year.Text);
+                sql.AddParam("@semester", cmb_semester.Text);
+                sql.AddParam("@level", cmb_level.Text);
+                sql.AddParam("@specialty", cmb_specialty.Text);
+                sql.AddParam("@department", cmb_Department.Text);
+                sql.AddParam("@subject", cmb_subject.Text);
+
+                sql.AddParam("@mark", row.Cells["score"].Value);
+
+                //Execute Quey
+                sql.ExecQuery("Insert Into tbl_score(id,academic,year,semester,level,specialty,department,subject,score) Values(@id,@academic,@year,@semester,@level,@specialty,@department,@subject,@mark)", true);
+                
+            }
+            MessageBox.Show("suucess");
+            //REPORT & ABORT ON ERRORS
+            if (sql.HasException(true))
+            {
+                return;
+            }
+
+
+        }
+
+        private void cmb_specialty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            sql.retrive("select namekh,nameen,gender,dob from DATA where specialty = N'" + cmb_specialty.Text + "' ", dgv_Data);
         }
     }
 }
