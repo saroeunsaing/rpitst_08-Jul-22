@@ -101,7 +101,7 @@ namespace RPITST.Forms
             this.label_Title.ForeColor = System.Drawing.Color.DimGray;
             this.label_Title.Location = new System.Drawing.Point(630, 49);
             this.label_Title.Name = "label_Title";
-            this.label_Title.Size = new System.Drawing.Size(109, 49);
+            this.label_Title.Size = new System.Drawing.Size(185, 62);
             this.label_Title.TabIndex = 13;
             this.label_Title.Text = "BATCH";
             // 
@@ -172,6 +172,7 @@ namespace RPITST.Forms
             this.btn_Save.Text = "SAVE";
             this.btn_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_NameEn
             // 
@@ -254,7 +255,7 @@ namespace RPITST.Forms
             this.txt_NameEN.ForeColor = System.Drawing.Color.DimGray;
             this.txt_NameEN.Location = new System.Drawing.Point(580, 303);
             this.txt_NameEN.Name = "txt_NameEN";
-            this.txt_NameEN.Size = new System.Drawing.Size(270, 28);
+            this.txt_NameEN.Size = new System.Drawing.Size(270, 35);
             this.txt_NameEN.TabIndex = 3;
             // 
             // txt_NameKH
@@ -265,7 +266,7 @@ namespace RPITST.Forms
             this.txt_NameKH.ForeColor = System.Drawing.Color.DimGray;
             this.txt_NameKH.Location = new System.Drawing.Point(580, 229);
             this.txt_NameKH.Name = "txt_NameKH";
-            this.txt_NameKH.Size = new System.Drawing.Size(270, 28);
+            this.txt_NameKH.Size = new System.Drawing.Size(270, 35);
             this.txt_NameKH.TabIndex = 2;
             // 
             // txt_ID
@@ -276,7 +277,7 @@ namespace RPITST.Forms
             this.txt_ID.ForeColor = System.Drawing.Color.DimGray;
             this.txt_ID.Location = new System.Drawing.Point(580, 149);
             this.txt_ID.Name = "txt_ID";
-            this.txt_ID.Size = new System.Drawing.Size(270, 28);
+            this.txt_ID.Size = new System.Drawing.Size(270, 35);
             this.txt_ID.TabIndex = 1;
             // 
             // dgv_Data
@@ -289,6 +290,7 @@ namespace RPITST.Forms
             this.dgv_Data.Name = "dgv_Data";
             this.dgv_Data.ReadOnly = true;
             this.dgv_Data.RowHeadersVisible = false;
+            this.dgv_Data.RowHeadersWidth = 51;
             this.dgv_Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Data.Size = new System.Drawing.Size(500, 460);
             this.dgv_Data.TabIndex = 0;
@@ -305,7 +307,7 @@ namespace RPITST.Forms
             // 
             // Frm_Batch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 34F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(900, 500);

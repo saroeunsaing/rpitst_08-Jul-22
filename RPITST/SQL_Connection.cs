@@ -10,10 +10,10 @@ namespace RPITST
     public abstract class SQL_Connection
     {
         //Server Configuration
-        private  string datasource  = "rpitst-db.c1jvrf1pnsrj.us-east-2.rds.amazonaws.com";
-        private  string database = "rpitst";
-        private  string user_ID  = "admin";
-        private  string pwd  = "admin123";
+        private  string datasource  = "GURUTECH\\LOCALHOST";
+        private  string database = "rpitst_project";
+        private  string user_ID  = "sa";
+        private  string pwd  = "123";
 
         private  string cs;
 

@@ -103,6 +103,12 @@
     <Compile Include="Forms\Frm_Department.Designer.cs">
       <DependentUpon>Frm_Department.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_Examination.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Examination.Designer.cs">
+      <DependentUpon>Frm_Examination.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_RptERL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,16 +172,16 @@
       <DependentUpon>CR_Certifycate.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\CR_Provisional_Certificate .cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CR_Provisional_Certificate .rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reports\CR_ERL.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CR_ERL.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CR_Provisional_Certificate .cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Provisional_Certificate .rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\CR_Transcript.cs">
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Department.resx">
       <DependentUpon>Frm_Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Examination.resx">
+      <DependentUpon>Frm_Examination.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_RptERL.resx">
       <DependentUpon>Frm_RptERL.cs</DependentUpon>
@@ -242,13 +251,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_Certifycate.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\CR_Provisional_Certificate .rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CR_Provisional_Certificate .cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\CR_ERL.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_ERL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CR_Provisional_Certificate .rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Provisional_Certificate .cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CR_Transcript.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

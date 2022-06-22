@@ -33,5 +33,10 @@ namespace RPITST.Forms
             CueBannerText.SetCueText(txt_NameKH, "ឆ្នាំសិក្សា");
             CueBannerText.SetCueText(txt_NameEN, "ជាឡាតាំង");
         }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

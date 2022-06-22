@@ -27,6 +27,7 @@ namespace RPITST
         }
 
 
+
         #region EXECUTEQUERY   
         // QUERY PARAMETERSdfdsf
         public List<SqlParameter> Params = new List<SqlParameter>();
@@ -126,19 +127,48 @@ namespace RPITST
 
         #endregion
 
+        public void GetDataGrid(string qty, DataGridView dgv)
+        {
+            cn = GetConnection();
+            cn.Open();
+            SqlCommand command = new SqlCommand(qty, cn);
+            SqlDataReader reader = command.ExecuteReader();
+            SqlDataReader sqlDataReader = reader;
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("id");
+            dataTable.Columns.Add("namekh");
+            dataTable.Columns.Add("nameen");
+            dataTable.Columns.Add("gender");
+            dataTable.Columns.Add("dob");
+            while (sqlDataReader.Read())
+            {
+                DataRow row = dataTable.NewRow();
+                row["id"] = sqlDataReader["id"];
+                row["namekh"] = sqlDataReader["namekh"];
+                row["nameen"] = sqlDataReader["nameen"];
+                row["gender"] = sqlDataReader["gender"];
+                row["dob"] = sqlDataReader["dob"];
+                dataTable.Rows.Add(row);
+            }
+            dgv.DataSource = dataTable;
+            //dgv.DataBindings();
+            cn.Close();
+           
+        }
         public void Retrive(string qty, DataGridView dgv)
         {
             using (var cn = GetConnection())
             {
-                cmd = new SqlCommand(qty, cn);
-                da = new SqlDataAdapter(cmd);
+
+                cn.Open();
+                da = new SqlDataAdapter(qty, cn);
 
                 dt = new DataTable();
 
                 da.Fill(dt);
 
                 dgv.DataSource = dt;
-
+               
             }
         }
         public string GetMaxID(string table, string field, int num, string pre, string defualt)

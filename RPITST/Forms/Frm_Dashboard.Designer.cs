@@ -29,12 +29,15 @@ namespace RPITST.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel_Title = new System.Windows.Forms.Panel();
             this.btn_Minimize = new FontAwesome.Sharp.IconButton();
             this.btn_Maximize = new FontAwesome.Sharp.IconButton();
             this.btn_Restore = new FontAwesome.Sharp.IconButton();
             this.btn_Close = new FontAwesome.Sharp.IconButton();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.btn_Menu1 = new FontAwesome.Sharp.IconButton();
             this.btn_SignOut = new FontAwesome.Sharp.IconButton();
             this.btn_Menu3 = new FontAwesome.Sharp.IconButton();
             this.btn_Menu2 = new FontAwesome.Sharp.IconButton();
@@ -46,10 +49,12 @@ namespace RPITST.Forms
             this.btn_Facebook = new FontAwesome.Sharp.IconButton();
             this.btn_Home = new FontAwesome.Sharp.IconButton();
             this.btn_Menu = new FontAwesome.Sharp.IconButton();
+            this.timer_MenuShow = new System.Windows.Forms.Timer(this.components);
+            this.timer_MenuHide = new System.Windows.Forms.Timer(this.components);
             this.panel_Content = new System.Windows.Forms.Panel();
-            this.btn_Menu1 = new FontAwesome.Sharp.IconButton();
             this.panel_Title.SuspendLayout();
             this.panel_Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Title
@@ -62,72 +67,82 @@ namespace RPITST.Forms
             this.panel_Title.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Title.Location = new System.Drawing.Point(0, 0);
             this.panel_Title.Name = "panel_Title";
-            this.panel_Title.Size = new System.Drawing.Size(1100, 35);
+            this.panel_Title.Size = new System.Drawing.Size(1200, 35);
             this.panel_Title.TabIndex = 0;
             // 
             // btn_Minimize
             // 
+            this.btn_Minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Minimize.FlatAppearance.BorderSize = 0;
             this.btn_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Minimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.btn_Minimize.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Minimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Minimize.IconSize = 30;
-            this.btn_Minimize.Location = new System.Drawing.Point(959, 3);
+            this.btn_Minimize.Location = new System.Drawing.Point(1095, 3);
             this.btn_Minimize.Name = "btn_Minimize";
             this.btn_Minimize.Size = new System.Drawing.Size(30, 30);
             this.btn_Minimize.TabIndex = 4;
             this.btn_Minimize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Minimize.UseVisualStyleBackColor = true;
+            this.btn_Minimize.Click += new System.EventHandler(this.btn_Minimize_Click);
             // 
             // btn_Maximize
             // 
+            this.btn_Maximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Maximize.FlatAppearance.BorderSize = 0;
             this.btn_Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Maximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.btn_Maximize.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Maximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Maximize.IconSize = 30;
-            this.btn_Maximize.Location = new System.Drawing.Point(995, 3);
+            this.btn_Maximize.Location = new System.Drawing.Point(1131, 2);
             this.btn_Maximize.Name = "btn_Maximize";
             this.btn_Maximize.Size = new System.Drawing.Size(30, 30);
             this.btn_Maximize.TabIndex = 3;
             this.btn_Maximize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Maximize.UseVisualStyleBackColor = true;
+            this.btn_Maximize.Click += new System.EventHandler(this.btn_Maximize_Click);
             // 
             // btn_Restore
             // 
+            this.btn_Restore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Restore.FlatAppearance.BorderSize = 0;
             this.btn_Restore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Restore.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
             this.btn_Restore.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Restore.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Restore.IconSize = 30;
-            this.btn_Restore.Location = new System.Drawing.Point(1031, 3);
+            this.btn_Restore.Location = new System.Drawing.Point(1131, 3);
             this.btn_Restore.Name = "btn_Restore";
             this.btn_Restore.Size = new System.Drawing.Size(30, 30);
             this.btn_Restore.TabIndex = 2;
             this.btn_Restore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Restore.UseVisualStyleBackColor = true;
+            this.btn_Restore.Visible = false;
+            this.btn_Restore.Click += new System.EventHandler(this.btn_Restore_Click);
             // 
             // btn_Close
             // 
+            this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Close.FlatAppearance.BorderSize = 0;
             this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Close.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             this.btn_Close.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Close.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Close.IconSize = 30;
-            this.btn_Close.Location = new System.Drawing.Point(1067, 3);
+            this.btn_Close.Location = new System.Drawing.Point(1167, 3);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(30, 30);
             this.btn_Close.TabIndex = 1;
             this.btn_Close.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Close.UseVisualStyleBackColor = true;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // panel_Menu
             // 
             this.panel_Menu.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel_Menu.Controls.Add(this.iconPictureBox1);
             this.panel_Menu.Controls.Add(this.btn_Menu1);
             this.panel_Menu.Controls.Add(this.btn_SignOut);
             this.panel_Menu.Controls.Add(this.btn_Menu3);
@@ -146,22 +161,56 @@ namespace RPITST.Forms
             this.panel_Menu.Size = new System.Drawing.Size(300, 565);
             this.panel_Menu.TabIndex = 1;
             // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 78;
+            this.iconPictureBox1.Location = new System.Drawing.Point(98, 71);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(78, 89);
+            this.iconPictureBox1.TabIndex = 22;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // btn_Menu1
+            // 
+            this.btn_Menu1.FlatAppearance.BorderSize = 0;
+            this.btn_Menu1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Menu1.Font = new System.Drawing.Font("Khmer OS Siemreap", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btn_Menu1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Menu1.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.btn_Menu1.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Menu1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Menu1.IconSize = 40;
+            this.btn_Menu1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Menu1.Location = new System.Drawing.Point(-4, 256);
+            this.btn_Menu1.Name = "btn_Menu1";
+            this.btn_Menu1.Size = new System.Drawing.Size(291, 60);
+            this.btn_Menu1.TabIndex = 21;
+            this.btn_Menu1.Text = "ACADEMIC";
+            this.btn_Menu1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Menu1.UseVisualStyleBackColor = true;
+            this.btn_Menu1.Click += new System.EventHandler(this.btn_Menu1_Click);
+            // 
             // btn_SignOut
             // 
             this.btn_SignOut.FlatAppearance.BorderSize = 0;
             this.btn_SignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SignOut.Font = new System.Drawing.Font("Khmer OS Siemreap", 20.25F, System.Drawing.FontStyle.Bold);
             this.btn_SignOut.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_SignOut.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.btn_SignOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.btn_SignOut.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btn_SignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_SignOut.IconSize = 40;
             this.btn_SignOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SignOut.Location = new System.Drawing.Point(0, 425);
+            this.btn_SignOut.Location = new System.Drawing.Point(-3, 425);
             this.btn_SignOut.Name = "btn_SignOut";
-            this.btn_SignOut.Size = new System.Drawing.Size(291, 40);
+            this.btn_SignOut.Size = new System.Drawing.Size(291, 60);
             this.btn_SignOut.TabIndex = 20;
-            this.btn_SignOut.Text = "SIGHN OUT";
+            this.btn_SignOut.Text = "SIGHN OUT ស្រុក";
             this.btn_SignOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SignOut.UseVisualStyleBackColor = true;
             // 
@@ -176,9 +225,9 @@ namespace RPITST.Forms
             this.btn_Menu3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Menu3.IconSize = 40;
             this.btn_Menu3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Menu3.Location = new System.Drawing.Point(0, 369);
+            this.btn_Menu3.Location = new System.Drawing.Point(-3, 369);
             this.btn_Menu3.Name = "btn_Menu3";
-            this.btn_Menu3.Size = new System.Drawing.Size(291, 40);
+            this.btn_Menu3.Size = new System.Drawing.Size(291, 60);
             this.btn_Menu3.TabIndex = 19;
             this.btn_Menu3.Text = "-----";
             this.btn_Menu3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -195,9 +244,9 @@ namespace RPITST.Forms
             this.btn_Menu2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Menu2.IconSize = 40;
             this.btn_Menu2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Menu2.Location = new System.Drawing.Point(0, 313);
+            this.btn_Menu2.Location = new System.Drawing.Point(-3, 313);
             this.btn_Menu2.Name = "btn_Menu2";
-            this.btn_Menu2.Size = new System.Drawing.Size(291, 40);
+            this.btn_Menu2.Size = new System.Drawing.Size(291, 60);
             this.btn_Menu2.TabIndex = 18;
             this.btn_Menu2.Text = "------";
             this.btn_Menu2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -205,6 +254,7 @@ namespace RPITST.Forms
             // 
             // btn_Messager
             // 
+            this.btn_Messager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Messager.FlatAppearance.BorderSize = 0;
             this.btn_Messager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Messager.IconChar = FontAwesome.Sharp.IconChar.FacebookMessenger;
@@ -220,6 +270,7 @@ namespace RPITST.Forms
             // 
             // btn_Instagram
             // 
+            this.btn_Instagram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Instagram.FlatAppearance.BorderSize = 0;
             this.btn_Instagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Instagram.IconChar = FontAwesome.Sharp.IconChar.Instagram;
@@ -232,10 +283,10 @@ namespace RPITST.Forms
             this.btn_Instagram.TabIndex = 15;
             this.btn_Instagram.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Instagram.UseVisualStyleBackColor = true;
-            this.btn_Instagram.Click += new System.EventHandler(this.btn_Instagram_Click);
             // 
             // btn_WhatApp
             // 
+            this.btn_WhatApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_WhatApp.FlatAppearance.BorderSize = 0;
             this.btn_WhatApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_WhatApp.IconChar = FontAwesome.Sharp.IconChar.Whatsapp;
@@ -251,6 +302,7 @@ namespace RPITST.Forms
             // 
             // btn_Telegram
             // 
+            this.btn_Telegram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Telegram.FlatAppearance.BorderSize = 0;
             this.btn_Telegram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Telegram.IconChar = FontAwesome.Sharp.IconChar.Telegram;
@@ -266,6 +318,7 @@ namespace RPITST.Forms
             // 
             // btn_Youtube
             // 
+            this.btn_Youtube.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Youtube.FlatAppearance.BorderSize = 0;
             this.btn_Youtube.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Youtube.IconChar = FontAwesome.Sharp.IconChar.Youtube;
@@ -281,6 +334,7 @@ namespace RPITST.Forms
             // 
             // btn_Facebook
             // 
+            this.btn_Facebook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Facebook.FlatAppearance.BorderSize = 0;
             this.btn_Facebook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Facebook.IconChar = FontAwesome.Sharp.IconChar.Facebook;
@@ -305,9 +359,9 @@ namespace RPITST.Forms
             this.btn_Home.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Home.IconSize = 40;
             this.btn_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Home.Location = new System.Drawing.Point(0, 199);
+            this.btn_Home.Location = new System.Drawing.Point(-3, 203);
             this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(291, 40);
+            this.btn_Home.Size = new System.Drawing.Size(291, 60);
             this.btn_Home.TabIndex = 6;
             this.btn_Home.Text = "HOME";
             this.btn_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -315,52 +369,43 @@ namespace RPITST.Forms
             // 
             // btn_Menu
             // 
+            this.btn_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Menu.FlatAppearance.BorderSize = 0;
             this.btn_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Menu.IconChar = FontAwesome.Sharp.IconChar.ListUl;
             this.btn_Menu.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Menu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Menu.IconSize = 45;
-            this.btn_Menu.Location = new System.Drawing.Point(254, 6);
+            this.btn_Menu.IconSize = 40;
+            this.btn_Menu.Location = new System.Drawing.Point(261, 6);
             this.btn_Menu.Name = "btn_Menu";
             this.btn_Menu.Size = new System.Drawing.Size(40, 40);
             this.btn_Menu.TabIndex = 5;
             this.btn_Menu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Menu.UseVisualStyleBackColor = true;
+            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
+            // 
+            // timer_MenuShow
+            // 
+            this.timer_MenuShow.Tick += new System.EventHandler(this.timer_MenuShow_Tick);
+            // 
+            // timer_MenuHide
+            // 
+            this.timer_MenuHide.Tick += new System.EventHandler(this.timer_MenuHide_Tick);
             // 
             // panel_Content
             // 
             this.panel_Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Content.Location = new System.Drawing.Point(300, 35);
             this.panel_Content.Name = "panel_Content";
-            this.panel_Content.Size = new System.Drawing.Size(800, 565);
-            this.panel_Content.TabIndex = 2;
-            // 
-            // btn_Menu1
-            // 
-            this.btn_Menu1.FlatAppearance.BorderSize = 0;
-            this.btn_Menu1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Menu1.Font = new System.Drawing.Font("Khmer OS Siemreap", 20.25F, System.Drawing.FontStyle.Bold);
-            this.btn_Menu1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Menu1.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.btn_Menu1.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Menu1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Menu1.IconSize = 40;
-            this.btn_Menu1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Menu1.Location = new System.Drawing.Point(0, 256);
-            this.btn_Menu1.Name = "btn_Menu1";
-            this.btn_Menu1.Size = new System.Drawing.Size(291, 40);
-            this.btn_Menu1.TabIndex = 21;
-            this.btn_Menu1.Text = "------";
-            this.btn_Menu1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Menu1.UseVisualStyleBackColor = true;
+            this.panel_Content.Size = new System.Drawing.Size(900, 565);
+            this.panel_Content.TabIndex = 3;
             // 
             // Frm_Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 34F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1100, 600);
+            this.ClientSize = new System.Drawing.Size(1200, 600);
             this.Controls.Add(this.panel_Content);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.panel_Title);
@@ -368,9 +413,11 @@ namespace RPITST.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Frm_Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Dashboard";
             this.panel_Title.ResumeLayout(false);
             this.panel_Menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,7 +426,6 @@ namespace RPITST.Forms
 
         private System.Windows.Forms.Panel panel_Title;
         private System.Windows.Forms.Panel panel_Menu;
-        private System.Windows.Forms.Panel panel_Content;
         private FontAwesome.Sharp.IconButton btn_Minimize;
         private FontAwesome.Sharp.IconButton btn_Maximize;
         private FontAwesome.Sharp.IconButton btn_Restore;
@@ -396,5 +442,9 @@ namespace RPITST.Forms
         private FontAwesome.Sharp.IconButton btn_Menu3;
         private FontAwesome.Sharp.IconButton btn_Menu2;
         private FontAwesome.Sharp.IconButton btn_Menu1;
+        private System.Windows.Forms.Timer timer_MenuShow;
+        private System.Windows.Forms.Timer timer_MenuHide;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Panel panel_Content;
     }
 }
