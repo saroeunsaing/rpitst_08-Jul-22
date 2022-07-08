@@ -95,5 +95,19 @@ namespace RPITST.Forms
         {
             AbrirFormHija(new Frm_Academic());
         }
+
+        private void Btn_Examination_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Frm_Examination frm = new Frm_Examination();
+            frm.Show();
+        }
+
+        private void Btn_FR14_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Frm_FR14_StudentList frm = new Frm_FR14_StudentList();
+            frm.Show();
+        }
     }
 }

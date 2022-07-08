@@ -52,9 +52,12 @@ namespace RPITST.Forms
             this.timer_MenuShow = new System.Windows.Forms.Timer(this.components);
             this.timer_MenuHide = new System.Windows.Forms.Timer(this.components);
             this.panel_Content = new System.Windows.Forms.Panel();
+            this.Btn_Examination = new FontAwesome.Sharp.IconButton();
+            this.Btn_FR14 = new FontAwesome.Sharp.IconButton();
             this.panel_Title.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panel_Content.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Title
@@ -179,18 +182,19 @@ namespace RPITST.Forms
             // 
             this.btn_Menu1.FlatAppearance.BorderSize = 0;
             this.btn_Menu1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Menu1.Font = new System.Drawing.Font("Khmer OS Siemreap", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btn_Menu1.Font = new System.Drawing.Font("Suwannaphum", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Menu1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Menu1.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btn_Menu1.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Menu1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Menu1.IconSize = 40;
             this.btn_Menu1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Menu1.Location = new System.Drawing.Point(-4, 256);
+            this.btn_Menu1.Location = new System.Drawing.Point(1, 256);
             this.btn_Menu1.Name = "btn_Menu1";
-            this.btn_Menu1.Size = new System.Drawing.Size(291, 60);
+            this.btn_Menu1.Size = new System.Drawing.Size(291, 41);
             this.btn_Menu1.TabIndex = 21;
             this.btn_Menu1.Text = "ACADEMIC";
+            this.btn_Menu1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Menu1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Menu1.UseVisualStyleBackColor = true;
             this.btn_Menu1.Click += new System.EventHandler(this.btn_Menu1_Click);
@@ -199,18 +203,19 @@ namespace RPITST.Forms
             // 
             this.btn_SignOut.FlatAppearance.BorderSize = 0;
             this.btn_SignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SignOut.Font = new System.Drawing.Font("Khmer OS Siemreap", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btn_SignOut.Font = new System.Drawing.Font("Suwannaphum", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SignOut.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_SignOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.btn_SignOut.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btn_SignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_SignOut.IconSize = 40;
             this.btn_SignOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SignOut.Location = new System.Drawing.Point(-3, 425);
+            this.btn_SignOut.Location = new System.Drawing.Point(2, 425);
             this.btn_SignOut.Name = "btn_SignOut";
-            this.btn_SignOut.Size = new System.Drawing.Size(291, 60);
+            this.btn_SignOut.Size = new System.Drawing.Size(291, 41);
             this.btn_SignOut.TabIndex = 20;
-            this.btn_SignOut.Text = "SIGHN OUT ស្រុក";
+            this.btn_SignOut.Text = "SIGHN OUT";
+            this.btn_SignOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_SignOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SignOut.UseVisualStyleBackColor = true;
             // 
@@ -218,18 +223,19 @@ namespace RPITST.Forms
             // 
             this.btn_Menu3.FlatAppearance.BorderSize = 0;
             this.btn_Menu3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Menu3.Font = new System.Drawing.Font("Khmer OS Siemreap", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btn_Menu3.Font = new System.Drawing.Font("Suwannaphum", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Menu3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Menu3.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btn_Menu3.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Menu3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Menu3.IconSize = 40;
             this.btn_Menu3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Menu3.Location = new System.Drawing.Point(-3, 369);
+            this.btn_Menu3.Location = new System.Drawing.Point(2, 369);
             this.btn_Menu3.Name = "btn_Menu3";
-            this.btn_Menu3.Size = new System.Drawing.Size(291, 60);
+            this.btn_Menu3.Size = new System.Drawing.Size(291, 41);
             this.btn_Menu3.TabIndex = 19;
             this.btn_Menu3.Text = "-----";
+            this.btn_Menu3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Menu3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Menu3.UseVisualStyleBackColor = true;
             // 
@@ -237,18 +243,19 @@ namespace RPITST.Forms
             // 
             this.btn_Menu2.FlatAppearance.BorderSize = 0;
             this.btn_Menu2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Menu2.Font = new System.Drawing.Font("Khmer OS Siemreap", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btn_Menu2.Font = new System.Drawing.Font("Suwannaphum", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Menu2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Menu2.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btn_Menu2.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Menu2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Menu2.IconSize = 40;
             this.btn_Menu2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Menu2.Location = new System.Drawing.Point(-3, 313);
+            this.btn_Menu2.Location = new System.Drawing.Point(2, 313);
             this.btn_Menu2.Name = "btn_Menu2";
-            this.btn_Menu2.Size = new System.Drawing.Size(291, 60);
+            this.btn_Menu2.Size = new System.Drawing.Size(291, 41);
             this.btn_Menu2.TabIndex = 18;
             this.btn_Menu2.Text = "------";
+            this.btn_Menu2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Menu2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Menu2.UseVisualStyleBackColor = true;
             // 
@@ -352,18 +359,19 @@ namespace RPITST.Forms
             // 
             this.btn_Home.FlatAppearance.BorderSize = 0;
             this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Home.Font = new System.Drawing.Font("Khmer OS Siemreap", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btn_Home.Font = new System.Drawing.Font("Suwannaphum", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Home.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Home.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btn_Home.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Home.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Home.IconSize = 40;
             this.btn_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Home.Location = new System.Drawing.Point(-3, 203);
+            this.btn_Home.Location = new System.Drawing.Point(2, 203);
             this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(291, 60);
+            this.btn_Home.Size = new System.Drawing.Size(291, 41);
             this.btn_Home.TabIndex = 6;
             this.btn_Home.Text = "HOME";
+            this.btn_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Home.UseVisualStyleBackColor = true;
             // 
@@ -394,11 +402,49 @@ namespace RPITST.Forms
             // 
             // panel_Content
             // 
+            this.panel_Content.Controls.Add(this.Btn_FR14);
+            this.panel_Content.Controls.Add(this.Btn_Examination);
             this.panel_Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Content.Location = new System.Drawing.Point(300, 35);
             this.panel_Content.Name = "panel_Content";
             this.panel_Content.Size = new System.Drawing.Size(900, 565);
             this.panel_Content.TabIndex = 3;
+            // 
+            // Btn_Examination
+            // 
+            this.Btn_Examination.FlatAppearance.BorderSize = 0;
+            this.Btn_Examination.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Examination.ForeColor = System.Drawing.Color.Salmon;
+            this.Btn_Examination.IconChar = FontAwesome.Sharp.IconChar.FileSignature;
+            this.Btn_Examination.IconColor = System.Drawing.Color.Salmon;
+            this.Btn_Examination.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Examination.IconSize = 150;
+            this.Btn_Examination.Location = new System.Drawing.Point(57, 34);
+            this.Btn_Examination.Name = "Btn_Examination";
+            this.Btn_Examination.Size = new System.Drawing.Size(155, 200);
+            this.Btn_Examination.TabIndex = 23;
+            this.Btn_Examination.Text = "Examination";
+            this.Btn_Examination.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Btn_Examination.UseVisualStyleBackColor = true;
+            this.Btn_Examination.Click += new System.EventHandler(this.Btn_Examination_Click);
+            // 
+            // Btn_FR14
+            // 
+            this.Btn_FR14.FlatAppearance.BorderSize = 0;
+            this.Btn_FR14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_FR14.ForeColor = System.Drawing.Color.Salmon;
+            this.Btn_FR14.IconChar = FontAwesome.Sharp.IconChar.Linux;
+            this.Btn_FR14.IconColor = System.Drawing.Color.Salmon;
+            this.Btn_FR14.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_FR14.IconSize = 150;
+            this.Btn_FR14.Location = new System.Drawing.Point(250, 34);
+            this.Btn_FR14.Name = "Btn_FR14";
+            this.Btn_FR14.Size = new System.Drawing.Size(155, 200);
+            this.Btn_FR14.TabIndex = 24;
+            this.Btn_FR14.Text = "Student List";
+            this.Btn_FR14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Btn_FR14.UseVisualStyleBackColor = true;
+            this.Btn_FR14.Click += new System.EventHandler(this.Btn_FR14_Click);
             // 
             // Frm_Dashboard
             // 
@@ -418,6 +464,7 @@ namespace RPITST.Forms
             this.panel_Title.ResumeLayout(false);
             this.panel_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panel_Content.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -446,5 +493,7 @@ namespace RPITST.Forms
         private System.Windows.Forms.Timer timer_MenuHide;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Panel panel_Content;
+        private FontAwesome.Sharp.IconButton Btn_Examination;
+        private FontAwesome.Sharp.IconButton Btn_FR14;
     }
 }

@@ -37,7 +37,7 @@ namespace RPITST.Forms
             sql.cmbx("select id,namekh from specialty", cmb_specialty, "id", "namekh");
             sql.cmbx("select id,namekh from semester", cmb_semester, "id", "namekh");
             sql.cmbx("select id,namekh from year", cmb_year, "id", "namekh");
-            sql.retrive("select namekh,nameen,gender,dob from DATA where specialty = N'"+ cmb_specialty.SelectedValue + "' And level =N'" + cmb_level.SelectedValue + "'  ", dgv_Data);
+            //sql.retriev_score("select namekh,nameen,gender,dob from DATA where specialty = N'"+ cmb_specialty.SelectedValue + "' And level =N'" + cmb_level.SelectedValue + "'  ", dgv_Data);
             dgv_Data.Columns["score"].DefaultCellStyle.NullValue = "0.00";
         }
 
@@ -95,7 +95,7 @@ namespace RPITST.Forms
 
         private void cmb_specialty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sql.retrive("select namekh,nameen,gender,dob from DATA where specialty = N'" + cmb_specialty.Text + "' ", dgv_Data);
+            //sql.retrieve("select namekh,nameen,gender,dob from DATA where specialty = N'" + cmb_specialty.Text + "' ", dgv_Data);
         }
     }
 }

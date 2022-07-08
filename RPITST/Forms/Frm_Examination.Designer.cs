@@ -43,18 +43,23 @@ namespace RPITST.Forms
             this.Cmb_Year = new System.Windows.Forms.ComboBox();
             this.Cmb_Batch = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.Btn_Save = new FontAwesome.Sharp.IconButton();
             this.Btn_Cancel = new FontAwesome.Sharp.IconButton();
             this.Btn_Search = new FontAwesome.Sharp.IconButton();
-            this.Cmb_Subject = new System.Windows.Forms.ComboBox();
             this.Btn_New = new FontAwesome.Sharp.IconButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Cmb_Subject = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Txt_Years = new System.Windows.Forms.TextBox();
+            this.Txt_Months = new System.Windows.Forms.TextBox();
+            this.Txt_Days = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel_Title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Data)).BeginInit();
             this.SuspendLayout();
@@ -167,8 +172,8 @@ namespace RPITST.Forms
             this.Dgv_Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.Dgv_Data.Size = new System.Drawing.Size(1182, 430);
             this.Dgv_Data.TabIndex = 9;
-            this.Dgv_Data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Data_CellContentClick);
             this.Dgv_Data.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Data_CellDoubleClick);
+            this.Dgv_Data.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Data_CellEndEdit);
             this.Dgv_Data.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Dgv_Data_CellFormatting);
             this.Dgv_Data.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.Dgv_Data_CellValidating);
             // 
@@ -182,7 +187,6 @@ namespace RPITST.Forms
             this.Cmb_Specialty.Name = "Cmb_Specialty";
             this.Cmb_Specialty.Size = new System.Drawing.Size(342, 39);
             this.Cmb_Specialty.TabIndex = 2;
-            this.Cmb_Specialty.DropDown += new System.EventHandler(this.Cmb_Specialty_DropDown);
             this.Cmb_Specialty.SelectedIndexChanged += new System.EventHandler(this.Cmb_Specialty_SelectedIndexChanged);
             // 
             // Cmb_Level
@@ -207,7 +211,6 @@ namespace RPITST.Forms
             this.Cmb_Academic.Name = "Cmb_Academic";
             this.Cmb_Academic.Size = new System.Drawing.Size(148, 39);
             this.Cmb_Academic.TabIndex = 6;
-            this.Cmb_Academic.SelectedIndexChanged += new System.EventHandler(this.Cmb_Academic_SelectedIndexChanged);
             // 
             // Cmb_Semester
             // 
@@ -215,7 +218,7 @@ namespace RPITST.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Cmb_Semester.Font = new System.Drawing.Font("Suwannaphum Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_Semester.FormattingEnabled = true;
-            this.Cmb_Semester.Location = new System.Drawing.Point(697, 48);
+            this.Cmb_Semester.Location = new System.Drawing.Point(748, 50);
             this.Cmb_Semester.Name = "Cmb_Semester";
             this.Cmb_Semester.Size = new System.Drawing.Size(121, 39);
             this.Cmb_Semester.TabIndex = 0;
@@ -231,6 +234,7 @@ namespace RPITST.Forms
             this.Cmb_Year.Size = new System.Drawing.Size(73, 39);
             this.Cmb_Year.TabIndex = 3;
             this.Cmb_Year.DropDown += new System.EventHandler(this.Cmb_Year_DropDown);
+            this.Cmb_Year.SelectedIndexChanged += new System.EventHandler(this.Cmb_Year_SelectedIndexChanged);
             // 
             // Cmb_Batch
             // 
@@ -249,21 +253,9 @@ namespace RPITST.Forms
             this.label2.Font = new System.Drawing.Font("Suwannaphum", 14F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(380, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(311, 37);
+            this.label2.Size = new System.Drawing.Size(362, 37);
             this.label2.TabIndex = 11;
-            this.label2.Text = "លទ្ធផលប្រឡងសងឆមាសលើកទី";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Suwannaphum", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(344, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(424, 37);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "សម័យប្រឡង៖ ថ្ងៃទី ០៥ ខែ មិថុនា ឆ្នាំ២០២២";
+            this.label2.Text = "សម្រង់ពិន្ទុបេក្ខជនប្រឡងបញ្ចប់ឆមាសទី";
             // 
             // label4
             // 
@@ -317,20 +309,10 @@ namespace RPITST.Forms
             this.label8.TabIndex = 17;
             this.label8.Text = "ឆ្នាំសិក្សា ";
             // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(62, 248);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 36);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "មុខវិជ្ជាៈ";
-            // 
             // Btn_Save
             // 
             this.Btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_Save.Enabled = false;
             this.Btn_Save.FlatAppearance.BorderSize = 0;
             this.Btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Save.Font = new System.Drawing.Font("Suwannaphum", 12F);
@@ -366,7 +348,6 @@ namespace RPITST.Forms
             this.Btn_Cancel.Text = "ចាកចេញ";
             this.Btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Cancel.UseVisualStyleBackColor = true;
-            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
             // Btn_Search
             // 
@@ -388,18 +369,10 @@ namespace RPITST.Forms
             this.Btn_Search.UseVisualStyleBackColor = true;
             this.Btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
             // 
-            // Cmb_Subject
-            // 
-            this.Cmb_Subject.Font = new System.Drawing.Font("Suwannaphum Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cmb_Subject.FormattingEnabled = true;
-            this.Cmb_Subject.Location = new System.Drawing.Point(190, 248);
-            this.Cmb_Subject.Name = "Cmb_Subject";
-            this.Cmb_Subject.Size = new System.Drawing.Size(702, 39);
-            this.Cmb_Subject.TabIndex = 19;
-            // 
             // Btn_New
             // 
             this.Btn_New.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_New.Enabled = false;
             this.Btn_New.FlatAppearance.BorderSize = 0;
             this.Btn_New.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_New.Font = new System.Drawing.Font("Suwannaphum", 12F);
@@ -417,12 +390,108 @@ namespace RPITST.Forms
             this.Btn_New.UseVisualStyleBackColor = true;
             this.Btn_New.Click += new System.EventHandler(this.Btn_New_Click);
             // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(62, 248);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 36);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "មុខវិជ្ជាៈ";
+            // 
+            // Cmb_Subject
+            // 
+            this.Cmb_Subject.Font = new System.Drawing.Font("Suwannaphum Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cmb_Subject.FormattingEnabled = true;
+            this.Cmb_Subject.Location = new System.Drawing.Point(190, 248);
+            this.Cmb_Subject.Name = "Cmb_Subject";
+            this.Cmb_Subject.Size = new System.Drawing.Size(702, 39);
+            this.Cmb_Subject.TabIndex = 19;
+            this.Cmb_Subject.SelectedIndexChanged += new System.EventHandler(this.Cmb_Subject_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Suwannaphum", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(724, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 37);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "ឆ្នាំ";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Suwannaphum", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(581, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 37);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "ខែ";
+            // 
+            // Txt_Years
+            // 
+            this.Txt_Years.BackColor = System.Drawing.Color.Bisque;
+            this.Txt_Years.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_Years.Font = new System.Drawing.Font("Suwannaphum", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Years.Location = new System.Drawing.Point(770, 99);
+            this.Txt_Years.Name = "Txt_Years";
+            this.Txt_Years.Size = new System.Drawing.Size(110, 42);
+            this.Txt_Years.TabIndex = 50;
+            this.Txt_Years.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Txt_Months
+            // 
+            this.Txt_Months.BackColor = System.Drawing.Color.Bisque;
+            this.Txt_Months.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_Months.Font = new System.Drawing.Font("Suwannaphum", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Months.Location = new System.Drawing.Point(613, 100);
+            this.Txt_Months.Name = "Txt_Months";
+            this.Txt_Months.Size = new System.Drawing.Size(120, 42);
+            this.Txt_Months.TabIndex = 49;
+            this.Txt_Months.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Txt_Days
+            // 
+            this.Txt_Days.BackColor = System.Drawing.Color.Bisque;
+            this.Txt_Days.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_Days.Font = new System.Drawing.Font("Suwannaphum", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Days.Location = new System.Drawing.Point(535, 100);
+            this.Txt_Days.Name = "Txt_Days";
+            this.Txt_Days.Size = new System.Drawing.Size(51, 42);
+            this.Txt_Days.TabIndex = 48;
+            this.Txt_Days.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Suwannaphum", 14F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(346, 96);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(192, 37);
+            this.label10.TabIndex = 47;
+            this.label10.Text = "សម័យប្រឡង៖ ថ្ងៃទី";
+            // 
             // Frm_Examination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Txt_Years);
+            this.Controls.Add(this.Txt_Months);
+            this.Controls.Add(this.Txt_Days);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.Btn_New);
             this.Controls.Add(this.Cmb_Subject);
             this.Controls.Add(this.Btn_Search);
@@ -434,7 +503,6 @@ namespace RPITST.Forms
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Cmb_Batch);
             this.Controls.Add(this.Cmb_Year);
@@ -470,20 +538,25 @@ namespace RPITST.Forms
         private System.Windows.Forms.ComboBox Cmb_Year;
         private System.Windows.Forms.ComboBox Cmb_Batch;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private FontAwesome.Sharp.IconButton Btn_Save;
         private FontAwesome.Sharp.IconButton Btn_Cancel;
         private FontAwesome.Sharp.IconButton Btn_Search;
         private FontAwesome.Sharp.IconButton btn_Maximize;
         private FontAwesome.Sharp.IconButton btn_Minimize;
         private FontAwesome.Sharp.IconButton btn_Restore;
-        private System.Windows.Forms.ComboBox Cmb_Subject;
         private FontAwesome.Sharp.IconButton Btn_New;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox Cmb_Subject;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox Txt_Years;
+        private System.Windows.Forms.TextBox Txt_Months;
+        private System.Windows.Forms.TextBox Txt_Days;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -14,17 +14,19 @@ namespace RPITST
 {
     class SQL_Control: SQL_Connection
     {
-        public SqlConnection cn;
-        public SqlCommand cmd;
-        public SqlDataAdapter da;
+        public SqlConnection cn = new SqlConnection();
+        public SqlCommand cmd = new SqlCommand();
+        public SqlDataAdapter da = new SqlDataAdapter();
         public SqlDataReader dr;
         public DataTable dt;
         public DataSet ds;
 
-        internal object LoadReport()
-        {
-            throw new NotImplementedException();
-        }
+        //internal object LoadReport(string v)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+
 
 
 
@@ -110,8 +112,10 @@ namespace RPITST
         {
             using (var cn = GetConnection())
             {
+                cn.Open();
                 da = new SqlDataAdapter(qty, cn);
-                DataSet_Data ds = new DataSet_Data();
+                Data.DataSet_RPITST ds = new Data.DataSet_RPITST();
+                ds.EnforceConstraints = false;
                 da.Fill(ds, table);
                 return ds;
             }
@@ -126,51 +130,6 @@ namespace RPITST
         }
 
         #endregion
-
-        public void GetDataGrid(string qty, DataGridView dgv)
-        {
-            cn = GetConnection();
-            cn.Open();
-            SqlCommand command = new SqlCommand(qty, cn);
-            SqlDataReader reader = command.ExecuteReader();
-            SqlDataReader sqlDataReader = reader;
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("id");
-            dataTable.Columns.Add("namekh");
-            dataTable.Columns.Add("nameen");
-            dataTable.Columns.Add("gender");
-            dataTable.Columns.Add("dob");
-            while (sqlDataReader.Read())
-            {
-                DataRow row = dataTable.NewRow();
-                row["id"] = sqlDataReader["id"];
-                row["namekh"] = sqlDataReader["namekh"];
-                row["nameen"] = sqlDataReader["nameen"];
-                row["gender"] = sqlDataReader["gender"];
-                row["dob"] = sqlDataReader["dob"];
-                dataTable.Rows.Add(row);
-            }
-            dgv.DataSource = dataTable;
-            //dgv.DataBindings();
-            cn.Close();
-           
-        }
-        public void Retrive(string qty, DataGridView dgv)
-        {
-            using (var cn = GetConnection())
-            {
-
-                cn.Open();
-                da = new SqlDataAdapter(qty, cn);
-
-                dt = new DataTable();
-
-                da.Fill(dt);
-
-                dgv.DataSource = dt;
-               
-            }
-        }
         public string GetMaxID(string table, string field, int num, string pre, string defualt)
 
         {
@@ -201,6 +160,78 @@ namespace RPITST
                 cn.Close();
             }
         }
+
+        //function for combobox with display value and value Member
+        public void cmbx(string qty, ComboBox cbx, string index, string value)
+        {
+            using (var cn = GetConnection())
+            {
+                //  cn.Open();
+                da = new SqlDataAdapter(qty, cn);
+                dt = new DataTable();
+
+                da.Fill(dt);
+
+                cbx.DataSource = dt;
+                cbx.DisplayMember = value;
+                cbx.ValueMember = index;
+                //diable blue highlight in combobox
+                cbx.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                //how to call function above: cmbx("SELECT * FROM semesters", comboboxname, "id", "nameen");
+            }
+        }
+        public void retrieve(string qty, DataGridView dgv)
+        {
+            using (var cn = GetConnection())
+            {
+
+                cn.Open();
+                da = new SqlDataAdapter(qty, cn);
+
+                dt = new DataTable();
+
+                da.Fill(dt);
+
+                dgv.DataSource = dt;
+
+            }
+        }
+        
+        public void Dgv_Score(string qty, DataGridView dgv)
+        {
+            cn = GetConnection();
+            cn.Open();
+            SqlCommand command = new SqlCommand(qty, cn);
+            SqlDataReader reader = command.ExecuteReader();
+            SqlDataReader sqlDataReader = reader;
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("id");
+            dataTable.Columns.Add("namekh");
+            dataTable.Columns.Add("nameen");
+            dataTable.Columns.Add("gender");
+            dataTable.Columns.Add("dob");
+            while (sqlDataReader.Read())
+            {
+                DataRow row = dataTable.NewRow();
+                row["id"] = sqlDataReader["id"];
+                row["namekh"] = sqlDataReader["namekh"];
+                row["nameen"] = sqlDataReader["nameen"];
+                row["gender"] = sqlDataReader["gender"];
+                row["dob"] = sqlDataReader["dob"];
+                dataTable.Rows.Add(row);
+            }
+            dgv.DataSource = dataTable;
+            //dgv.DataBindings();
+            cn.Close();
+
+        }
+        
+
+
+        /*
+       
+
         DataTable Pivot(DataTable dt, DataColumn pivotColumn, DataColumn pivotValue)
         {
             // find primary key columns 
@@ -235,10 +266,12 @@ namespace RPITST
 
             return result;
         }
+        */
 
-        public void BindGrid(DataGridView gvDetails, ComboBox cboX,ComboBox cboY,ComboBox cboZ)
+        /*
+        public void BindGrid(DataGridView gvDetails, ComboBox cboX, ComboBox cboY, ComboBox cboZ)
         {
-           
+
             ////string query = @"DECLARE @DynamicPivotQuery AS NVARCHAR(MAX)
             //            DECLARE @ColumnName AS NVARCHAR(MAX)
             //            SELECT @ColumnName = ISNULL(@ColumnName + ',','')+ QUOTENAME(subject) FROM (SELECT DISTINCT subject FROM score) AS student
@@ -273,42 +306,22 @@ namespace RPITST
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
                         con.Close();
-                        
+
                         gvDetails.DataSource = dt;
 
                         //}
                     }
                 }
             }
-        }
-    public void REPORT()
-        {
-            
-            using (cn = GetConnection())
-            {
-            
-            }
-        }
+        } */
 
-       public void cmbx(string qty,ComboBox cbx,string index,string value)
-        {
-            using(var cn = GetConnection())
-            {
-               //  cn.Open();
-                da =new SqlDataAdapter(qty, cn);
-                dt = new DataTable();
 
-                da.Fill(dt);
 
-                cbx.DataSource = dt;
-                cbx.DisplayMember = value;
-                cbx.ValueMember = index;
-            }
-        }
-        DataTable m_dataTable;
-        DataTable table { get { return m_dataTable; } set { m_dataTable = value; } }
+        // DataTable m_dataTable;
+        // DataTable table { get { return m_dataTable; } set { m_dataTable = value; } }
 
-        
+        /* for form_score in project */
+        /*
         private const string m_choiceCol = "Score";
 
         class Options
@@ -316,8 +329,8 @@ namespace RPITST
             public int m_Index { get; set; }
             public string m_Text { get; set; }
         }
-
-        public void retrive(string qty,DataGridView dgv)
+        
+        public void retriev_scores(string qty,DataGridView dgv)
         {
             using (var cn = GetConnection())
             {
@@ -373,7 +386,9 @@ namespace RPITST
 
 
         }
+        */
+        
     }
 
-    
+
 }

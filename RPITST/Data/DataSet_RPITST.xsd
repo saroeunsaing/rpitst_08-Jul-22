@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_RPITST" targetNamespace="http://tempuri.org/DataSet_RPITST.xsd" xmlns:mstns="http://tempuri.org/DataSet_RPITST.xsd" xmlns="http://tempuri.org/DataSet_RPITST.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="rpitst_projectConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="rpitst_projectConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RPITST.Properties.Settings.GlobalReference.Default.rpitst_projectConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="register_2022TableAdapter" GeneratorDataComponentClassName="register_2022TableAdapter" Name="register_2022" UserDataComponentName="register_2022TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="rpitst_projectConnectionString (Settings)" DbObjectName="rpitst_project.dbo.register_2022" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT register_2022.*
+FROM     register_2022</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="namekh" DataSetColumn="namekh" />
+              <Mapping SourceColumn="nameen" DataSetColumn="nameen" />
+              <Mapping SourceColumn="gender" DataSetColumn="gender" />
+              <Mapping SourceColumn="dob" DataSetColumn="dob" />
+              <Mapping SourceColumn="level" DataSetColumn="level" />
+              <Mapping SourceColumn="specialty" DataSetColumn="specialty" />
+              <Mapping SourceColumn="years" DataSetColumn="years" />
+              <Mapping SourceColumn="batch" DataSetColumn="batch" />
+              <Mapping SourceColumn="shift" DataSetColumn="shift" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_RPITST" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet_RPITST" msprop:Generator_DataSetName="DataSet_RPITST">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="register_2022" msprop:Generator_RowEvHandlerName="register_2022RowChangeEventHandler" msprop:Generator_RowDeletedName="register_2022RowDeleted" msprop:Generator_RowDeletingName="register_2022RowDeleting" msprop:Generator_RowEvArgName="register_2022RowChangeEvent" msprop:Generator_TablePropName="register_2022" msprop:Generator_RowChangedName="register_2022RowChanged" msprop:Generator_RowChangingName="register_2022RowChanging" msprop:Generator_TableClassName="register_2022DataTable" msprop:Generator_RowClassName="register_2022Row" msprop:Generator_TableVarName="tableregister_2022" msprop:Generator_UserTableName="register_2022">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="namekh" msprop:Generator_ColumnPropNameInRow="namekh" msprop:Generator_ColumnPropNameInTable="namekhColumn" msprop:Generator_ColumnVarNameInTable="columnnamekh" msprop:Generator_UserColumnName="namekh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nameen" msprop:Generator_ColumnPropNameInRow="nameen" msprop:Generator_ColumnPropNameInTable="nameenColumn" msprop:Generator_ColumnVarNameInTable="columnnameen" msprop:Generator_UserColumnName="nameen" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="gender" msprop:Generator_ColumnPropNameInRow="gender" msprop:Generator_ColumnPropNameInTable="genderColumn" msprop:Generator_ColumnVarNameInTable="columngender" msprop:Generator_UserColumnName="gender" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dob" msprop:Generator_ColumnPropNameInRow="dob" msprop:Generator_ColumnPropNameInTable="dobColumn" msprop:Generator_ColumnVarNameInTable="columndob" msprop:Generator_UserColumnName="dob" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="level" msprop:Generator_ColumnPropNameInRow="level" msprop:Generator_ColumnPropNameInTable="levelColumn" msprop:Generator_ColumnVarNameInTable="columnlevel" msprop:Generator_UserColumnName="level" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="specialty" msprop:Generator_ColumnPropNameInRow="specialty" msprop:Generator_ColumnPropNameInTable="specialtyColumn" msprop:Generator_ColumnVarNameInTable="columnspecialty" msprop:Generator_UserColumnName="specialty" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="years" msprop:Generator_ColumnPropNameInRow="years" msprop:Generator_ColumnPropNameInTable="yearsColumn" msprop:Generator_ColumnVarNameInTable="columnyears" msprop:Generator_UserColumnName="years" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="batch" msprop:Generator_ColumnPropNameInRow="batch" msprop:Generator_ColumnPropNameInTable="batchColumn" msprop:Generator_ColumnVarNameInTable="columnbatch" msprop:Generator_UserColumnName="batch" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="shift" msprop:Generator_ColumnPropNameInRow="shift" msprop:Generator_ColumnPropNameInTable="shiftColumn" msprop:Generator_ColumnVarNameInTable="columnshift" msprop:Generator_UserColumnName="shift" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:register_2022" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
